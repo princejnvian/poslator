@@ -3,33 +3,36 @@ import ToolCard from "@/components/ToolCard";
 import ToolSearch from "@/components/ToolSearch";
 
 const tools = [
-  ["Time Card Calculator", "Track clock-in/out, breaks, weekly hours and pay.", "/calculators/time-card-calculator"],
-  ["Hours Worked Calculator", "Calculate hours and decimal hours between times.", "/calculators/hours-worked-calculator"],
-  ["Overtime Calculator", "Estimate regular, overtime and total gross pay.", "/calculators/overtime-calculator"],
+  ["Mortgage Calculator", "Estimate principal and interest monthly payment.", "/calculators/mortgage-calculator"],
+  ["Loan Calculator", "Estimate monthly payments and total loan interest.", "/calculators/loan-calculator"],
+  ["Compound Interest Calculator", "Project savings growth with compounding.", "/calculators/compound-interest-calculator"],
   ["Paycheck Calculator", "Estimate take-home pay with simple inputs.", "/calculators/paycheck-calculator"],
-  ["Take Home Pay Calculator", "Estimate net pay from gross pay and deductions.", "/calculators/take-home-pay-calculator"],
   ["Salary Calculator", "Convert hourly, weekly, monthly and annual pay.", "/calculators/salary-calculator"],
+  ["Investment Calculator", "Project potential investment growth over time.", "/calculators/investment-calculator"],
+  ["Car Loan Calculator", "Estimate a vehicle loan payment.", "/calculators/car-loan-calculator"],
+  ["BMI Calculator", "Calculate adult BMI from height and weight.", "/calculators/bmi-calculator"],
+  ["Take Home Pay Calculator", "Estimate net pay from gross pay and deductions.", "/calculators/take-home-pay-calculator"],
+  ["Amortization Calculator", "See payment, interest and payoff schedule.", "/calculators/amortization-calculator"],
+  ["Sales Tax Calculator", "Add or remove a user-supplied sales tax rate.", "/calculators/sales-tax-calculator"],
+  ["Time Card Calculator", "Track clock-in/out, breaks, weekly hours and pay.", "/calculators/time-card-calculator"],
   ["Percentage Calculator", "Find percentages, changes, markup and margin.", "/calculators/percentage-calculator"],
   ["Discount Calculator", "Calculate sale prices and savings instantly.", "/calculators/discount-calculator"],
   ["Tip Calculator", "Calculate tip, total and split the bill.", "/calculators/tip-calculator"],
-  ["Sales Tax Calculator", "Add or remove a user-supplied sales tax rate.", "/calculators/sales-tax-calculator"],
-  ["Amortization Calculator", "See payment, interest and payoff schedule.", "/calculators/amortization-calculator"],
-  ["Mortgage Calculator", "Estimate principal and interest monthly payment.", "/calculators/mortgage-calculator"],
-  ["Car Affordability Calculator", "Estimate a practical car price from income and debt.", "/calculators/car-affordability-calculator"],
   ["Age Calculator", "Calculate exact age between two dates.", "/calculators/age-calculator"],
+  ["Date Calculator", "Calculate days and weeks between two dates.", "/calculators/date-calculator"],
   ["Unit Converter", "Convert common length, weight and temperature units.", "/calculators/unit-converter"],
   ["Time Calculator", "Add or subtract hours and minutes.", "/calculators/time-calculator"]
 ];
 
 const popular = [
   tools.find(([title]) => title === "Mortgage Calculator"),
+  tools.find(([title]) => title === "Loan Calculator"),
+  tools.find(([title]) => title === "Compound Interest Calculator"),
   tools.find(([title]) => title === "Paycheck Calculator"),
-  tools.find(([title]) => title === "Salary Calculator"),
-  tools.find(([title]) => title === "Take Home Pay Calculator"),
-  tools.find(([title]) => title === "Amortization Calculator"),
-  tools.find(([title]) => title === "Sales Tax Calculator"),
-  tools.find(([title]) => title === "Time Card Calculator"),
-  tools.find(([title]) => title === "Percentage Calculator")
+  tools.find(([title]) => title === "Investment Calculator"),
+  tools.find(([title]) => title === "Car Loan Calculator"),
+  tools.find(([title]) => title === "BMI Calculator"),
+  tools.find(([title]) => title === "Salary Calculator")
 ];
 
 export default function Home() {
@@ -62,10 +65,12 @@ export default function Home() {
         <div className="container">
           <div className="section-heading"><div><div className="eyebrow">BROWSE BY JOB</div><h2>Find the right tool faster</h2></div></div>
           <div className="category-grid category-grid-premium">
-            <Link href="/calculators/time-card-calculator" className="category-card category-blue"><span className="category-icon">◷</span><div><b>Work & Time</b><small>Hours, time cards, overtime</small></div><strong>04 tools →</strong></Link>
-            <Link href="/calculators/paycheck-calculator" className="category-card category-green"><span className="category-icon">$</span><div><b>Money & Pay</b><small>Paychecks, salary, take-home pay</small></div><strong>07 tools →</strong></Link>
-            <Link href="/calculators/amortization-calculator" className="category-card category-purple"><span className="category-icon">⌂</span><div><b>Loans & Cars</b><small>Mortgage, amortization, affordability</small></div><strong>03 tools →</strong></Link>
-            <Link href="/calculators/unit-converter" className="category-card category-orange"><span className="category-icon">⇄</span><div><b>Everyday Math</b><small>Percentages, tips, discounts, units</small></div><strong>07 tools →</strong></Link>
+            <Link href="/calculators/time-card-calculator" className="category-card category-blue"><span className="category-icon">◷</span><div><b>Work & Time</b><small>Hours, time cards, overtime</small></div><strong>03 tools →</strong></Link>
+            <Link href="/calculators/paycheck-calculator" className="category-card category-green"><span className="category-icon">$</span><div><b>Money & Pay</b><small>Paychecks, salary, take-home pay</small></div><strong>04 tools →</strong></Link>
+            <Link href="/calculators/amortization-calculator" className="category-card category-purple"><span className="category-icon">⌂</span><div><b>Loans & Cars</b><small>Mortgage, loans and vehicle payments</small></div><strong>05 tools →</strong></Link>
+            <Link href="/calculators/compound-interest-calculator" className="category-card category-orange"><span className="category-icon">↗</span><div><b>Finance & Investing</b><small>Compounding and long-term projections</small></div><strong>02 tools →</strong></Link>
+            <Link href="/calculators/percentage-calculator" className="category-card category-blue"><span className="category-icon">%</span><div><b>Everyday Math</b><small>Percentages, tips, discounts and tax</small></div><strong>04 tools →</strong></Link>
+            <Link href="/calculators/age-calculator" className="category-card category-green"><span className="category-icon">◫</span><div><b>Dates & Health</b><small>Age, dates and BMI basics</small></div><strong>03 tools →</strong></Link>
           </div>
         </div>
       </section>

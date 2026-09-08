@@ -462,5 +462,113 @@ export const calculatorGuides = {
       { title: "Time Card Calculator", href: "/calculators/time-card-calculator", description: "Track a full workweek." },
       { title: "Age Calculator", href: "/calculators/age-calculator", description: "Compare calendar dates." }
     ]
+  },
+  "loan-calculator": {
+    title: "Loan Calculator",
+    intro: "A loan calculator helps you estimate the regular payment and total interest for a fixed-rate loan. Change the loan amount, rate, or term to compare different borrowing scenarios.",
+    steps: ["Enter the amount you plan to borrow.", "Enter the annual interest rate.", "Enter the loan term in months.", "Review the monthly payment, total payments, and total interest."],
+    howItWorks: "The calculator uses the standard fixed-rate loan payment formula. The interest rate is converted to a monthly rate and applied across the number of monthly payments.",
+    example: "A $25,000 loan at 7% for 60 months produces an estimated monthly payment and shows how much of the total cost is interest.",
+    tips: ["A longer term can lower the monthly payment but usually increases total interest.", "Compare APR and fees, not only the advertised interest rate.", "Actual lender payments can differ because of fees or other charges.", "Use the result for planning rather than as a loan offer."],
+    faqs: [
+      { question: "How is a loan payment calculated?", answer: "For a fixed-rate loan, the payment depends on the principal, monthly interest rate, and number of payments." },
+      { question: "Does a longer loan term cost more?", answer: "Usually. A longer term spreads payments over more months and generally results in more total interest." },
+      { question: "Does this include loan fees?", answer: "No. The calculator focuses on principal and interest unless costs are reflected in the amount borrowed." }
+    ],
+    related: [
+      { title: "Amortization Calculator", href: "/calculators/amortization-calculator", description: "See payment and interest over a loan." },
+      { title: "Car Loan Calculator", href: "/calculators/car-loan-calculator", description: "Estimate a vehicle loan payment." },
+      { title: "Mortgage Calculator", href: "/calculators/mortgage-calculator", description: "Estimate a home loan payment." }
+    ]
+  },
+  "car-loan-calculator": {
+    title: "Car Loan Calculator",
+    intro: "Estimate a vehicle loan payment from the car price, down payment, trade-in value, interest rate, and term. It is designed for quick car-buying comparisons.",
+    steps: ["Enter the vehicle price.", "Add your down payment and trade-in value.", "Enter the interest rate and loan term.", "Review the amount financed, monthly payment, and total interest."],
+    howItWorks: "The calculator subtracts the down payment and trade-in value from the vehicle price to estimate the amount financed, then applies a standard fixed-rate loan payment formula.",
+    example: "For a $30,000 vehicle with $5,000 down and a $7,000 rate over 60 months, the result shows an estimated payment based on the amount financed.",
+    tips: ["Taxes and dealer fees can increase the amount you actually finance.", "A larger down payment reduces the financed balance.", "Compare the total cost of financing, not just the monthly payment.", "Insurance and ownership costs are separate from the loan payment."],
+    faqs: [
+      { question: "Does the calculator include a trade-in?", answer: "Yes. Enter the trade-in value you expect to apply toward the vehicle." },
+      { question: "Are taxes included?", answer: "No. Add applicable taxes and fees to your vehicle price or financing amount when planning." },
+      { question: "Can I compare 48 and 60 month loans?", answer: "Yes. Change the term to compare the payment and total interest." }
+    ],
+    related: [
+      { title: "Car Affordability Calculator", href: "/calculators/car-affordability-calculator", description: "Estimate a comfortable car budget." },
+      { title: "Loan Calculator", href: "/calculators/loan-calculator", description: "Compare general loan scenarios." },
+      { title: "Investment Calculator", href: "/calculators/investment-calculator", description: "Project long-term investment growth." }
+    ]
+  },
+  "compound-interest-calculator": {
+    title: "Compound Interest Calculator",
+    intro: "Compound interest can make savings grow because returns are added to the balance and can themselves earn returns. This calculator also models regular monthly contributions.",
+    steps: ["Enter your starting balance.", "Enter a monthly contribution.", "Enter an annual interest rate and time period.", "Choose how often interest compounds and review the projected value."],
+    howItWorks: "The calculator compounds the starting balance and recurring contributions at the selected frequency. It then separates the projected ending balance into contributions and estimated interest.",
+    example: "Starting with $10,000, adding $300 each month, and assuming a 7% annual rate for 10 years illustrates how regular contributions and compounding can work together.",
+    tips: ["The assumed rate is not guaranteed.", "Fees and taxes can reduce real-world returns.", "Small changes in the rate or time horizon can have a large effect over long periods.", "Use multiple scenarios rather than relying on one projection."],
+    faqs: [
+      { question: "What is compound interest?", answer: "It is interest calculated on the original balance plus previously accumulated interest." },
+      { question: "Do monthly contributions matter?", answer: "Yes. Regular contributions add new money that can also participate in future growth." },
+      { question: "Is the projected result guaranteed?", answer: "No. It is a mathematical projection based on the rate you enter." }
+    ],
+    related: [
+      { title: "Investment Calculator", href: "/calculators/investment-calculator", description: "Project a potential investment balance." },
+      { title: "Loan Calculator", href: "/calculators/loan-calculator", description: "Estimate borrowing costs." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Work with percentages quickly." }
+    ]
+  },
+  "investment-calculator": {
+    title: "Investment Calculator",
+    intro: "An investment calculator can help you visualize how an initial amount and regular contributions might grow over time under an assumed annual return.",
+    steps: ["Enter your initial investment.", "Enter the amount you expect to contribute each month.", "Enter an assumed annual return.", "Choose the time horizon and review the projected value."],
+    howItWorks: "The projection compounds the assumed monthly return over the selected number of months and adds the future value of recurring monthly contributions.",
+    example: "An initial $10,000 investment with $500 added each month at an assumed 8% annual return over 20 years shows the potential effect of time and consistent contributions.",
+    tips: ["Investment returns are uncertain and can be negative.", "Taxes, fees, inflation, and account rules can affect actual results.", "Do not treat a projection as a promise of future performance.", "Compare conservative and optimistic assumptions."],
+    faqs: [
+      { question: "What return should I enter?", answer: "Use an assumption appropriate for the type of investment and your planning scenario. Consider testing several rates." },
+      { question: "Does this account for inflation?", answer: "No. The displayed value is a nominal projection and does not subtract inflation." },
+      { question: "Are market losses included?", answer: "The calculator uses a constant assumed return, so it does not model year-to-year market volatility." }
+    ],
+    related: [
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "See how compounding affects growth." },
+      { title: "Salary Calculator", href: "/calculators/salary-calculator", description: "Convert income between pay periods." },
+      { title: "Take Home Pay Calculator", href: "/calculators/take-home-pay-calculator", description: "Estimate income after deductions." }
+    ]
+  },
+  "bmi-calculator": {
+    title: "BMI Calculator",
+    intro: "BMI, or body mass index, is a screening measure based on height and weight. This version uses pounds and feet/inches for a quick adult BMI estimate.",
+    steps: ["Enter your height in feet and inches.", "Enter your weight in pounds.", "Review the calculated BMI.", "Use the category as general screening information, not a diagnosis."],
+    howItWorks: "For US customary units, BMI is calculated as weight in pounds multiplied by 703, divided by height in inches squared.",
+    example: "For an adult who is 5 feet 10 inches tall and weighs 180 pounds, the calculator returns a BMI and the corresponding standard adult category.",
+    tips: ["BMI does not directly measure body fat.", "Muscle mass, age, body composition, and other factors can affect interpretation.", "BMI categories are intended as screening ranges for adults.", "For children and teens, BMI interpretation uses age- and sex-specific growth charts."],
+    faqs: [
+      { question: "What does BMI stand for?", answer: "BMI stands for body mass index, a screening measure based on height and weight." },
+      { question: "Is BMI a diagnosis?", answer: "No. BMI is a screening measure and should be interpreted alongside other health information." },
+      { question: "Can this calculator be used for children?", answer: "The standard adult categories shown here are not intended for children. Children and teens require age- and sex-specific interpretation." }
+    ],
+    related: [
+      { title: "Age Calculator", href: "/calculators/age-calculator", description: "Calculate exact age from dates." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and changes." },
+      { title: "Unit Converter", href: "/calculators/unit-converter", description: "Convert common measurements." }
+    ]
+  },
+  "date-calculator": {
+    title: "Date Calculator",
+    intro: "Use the date calculator to find the number of calendar days between two dates, with quick conversions to weeks and approximate months.",
+    steps: ["Choose the start date.", "Choose the end date.", "Review the number of calendar days.", "Use the week and approximate month figures for planning."],
+    howItWorks: "The calculator subtracts the start date from the end date and converts the elapsed time into days. Weeks are days divided by seven, while the month value uses an average month length.",
+    example: "Entering January 1 and December 31 returns the elapsed calendar-day count for that date range and equivalent week and approximate month values.",
+    tips: ["The end date is treated as the second calendar date, not an additional full day.", "Months are approximate because calendar months have different lengths.", "For contracts or deadlines, check whether the relevant rule counts the start or end date.", "Use a calendar or official source when a legal deadline depends on a specific counting rule."],
+    faqs: [
+      { question: "Does the calculator count the start date?", answer: "It calculates elapsed days between the two calendar dates, so the difference between the same date and the next date is one day." },
+      { question: "Why are months approximate?", answer: "Calendar months range from 28 to 31 days, so a single exact day-to-month conversion is not always possible." },
+      { question: "Can I use it for legal deadlines?", answer: "Use it as a planning aid only. Legal and contractual deadlines can use special counting rules." }
+    ],
+    related: [
+      { title: "Age Calculator", href: "/calculators/age-calculator", description: "Calculate years, months and days." },
+      { title: "Time Calculator", href: "/calculators/time-calculator", description: "Add or subtract hours and minutes." },
+      { title: "Hours Worked Calculator", href: "/calculators/hours-worked-calculator", description: "Calculate elapsed work time." }
+    ]
   }
 };
