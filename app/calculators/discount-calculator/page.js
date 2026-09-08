@@ -1,8 +1,9 @@
 import { DiscountCalculator } from "@/components/calculators/MoneyCalculators";
 
 export const metadata = {
-  title: "Discount Calculator",
-  description: "Calculate savings and final price."
+  title: "Discount Calculator – Calculate Sale Price & Savings | POSLATOR",
+  description:
+    "Use POSLATOR's free discount calculator to find your savings, discount amount, and final sale price. Quickly calculate discounts for any purchase.",
 };
 
 export default function Page() {

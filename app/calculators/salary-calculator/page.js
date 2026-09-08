@@ -1,8 +1,9 @@
 import { SalaryCalculator } from "@/components/calculators/MoneyCalculators";
 
 export const metadata = {
-  title: "Salary Calculator",
-  description: "Convert pay between hourly, weekly, monthly and annual."
+  title: "Salary Calculator – Hourly, Monthly & Annual Salary | POSLATOR",
+  description:
+    "Use POSLATOR's free salary calculator to convert hourly, weekly, monthly, and annual pay. Quickly estimate your salary across different pay periods.",
 };
 
 export default function Page() {
