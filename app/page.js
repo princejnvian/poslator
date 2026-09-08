@@ -21,7 +21,16 @@ const tools = [
   ["Time Calculator", "Add or subtract hours and minutes.", "/calculators/time-calculator"]
 ];
 
-const popular = tools.slice(0, 8);
+const popular = [
+  tools.find(([title]) => title === "Mortgage Calculator"),
+  tools.find(([title]) => title === "Paycheck Calculator"),
+  tools.find(([title]) => title === "Salary Calculator"),
+  tools.find(([title]) => title === "Take Home Pay Calculator"),
+  tools.find(([title]) => title === "Amortization Calculator"),
+  tools.find(([title]) => title === "Sales Tax Calculator"),
+  tools.find(([title]) => title === "Time Card Calculator"),
+  tools.find(([title]) => title === "Percentage Calculator")
+];
 
 export default function Home() {
   return (
@@ -40,7 +49,7 @@ export default function Home() {
       <section className="section section-tight">
         <div className="container">
           <div className="section-heading">
-            <div><div className="eyebrow">POPULAR RIGHT NOW</div><h2>Start with a useful answer</h2></div>
+            <div><div className="eyebrow">POPULAR TOOLS</div><h2>Start with a useful answer</h2></div>
             <Link href="/calculators" className="text-link">Browse all tools <span>→</span></Link>
           </div>
           <div className="tool-grid tool-grid-premium">
@@ -53,8 +62,8 @@ export default function Home() {
         <div className="container">
           <div className="section-heading"><div><div className="eyebrow">BROWSE BY JOB</div><h2>Find the right tool faster</h2></div></div>
           <div className="category-grid category-grid-premium">
-            <Link href="/calculators/time-card-calculator" className="category-card category-blue"><span className="category-icon">◷</span><div><b>Work & Time</b><small>Hours, time cards, overtime</small></div><strong>06 tools →</strong></Link>
-            <Link href="/calculators/paycheck-calculator" className="category-card category-green"><span className="category-icon">$</span><div><b>Money & Pay</b><small>Paychecks, salary, take-home pay</small></div><strong>06 tools →</strong></Link>
+            <Link href="/calculators/time-card-calculator" className="category-card category-blue"><span className="category-icon">◷</span><div><b>Work & Time</b><small>Hours, time cards, overtime</small></div><strong>04 tools →</strong></Link>
+            <Link href="/calculators/paycheck-calculator" className="category-card category-green"><span className="category-icon">$</span><div><b>Money & Pay</b><small>Paychecks, salary, take-home pay</small></div><strong>07 tools →</strong></Link>
             <Link href="/calculators/amortization-calculator" className="category-card category-purple"><span className="category-icon">⌂</span><div><b>Loans & Cars</b><small>Mortgage, amortization, affordability</small></div><strong>03 tools →</strong></Link>
             <Link href="/calculators/unit-converter" className="category-card category-orange"><span className="category-icon">⇄</span><div><b>Everyday Math</b><small>Percentages, tips, discounts, units</small></div><strong>07 tools →</strong></Link>
           </div>

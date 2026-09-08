@@ -62,6 +62,6 @@ export function UnitConverter() {
   return <CalculatorShell title="Unit Converter" description="Convert common US and metric units for length, weight, temperature and volume.">
     <div className="form-grid"><Field label="Category" value={category} onChange={v=>{setCategory(v);}} options={[["length","Length"],["weight","Weight"],["temperature","Temperature"],["volume","Volume"]]}/><Field label="Value" value={value} onChange={setValue}/><Field label="From" value={validFrom} onChange={setFrom} options={opts}/><Field label="To" value={validTo} onChange={setTo} options={opts}/></div>
     <Results><Result label="Converted value" value={convert().toFixed(4).replace(/\.?0+$/,"")} large/></Results>
-    <div className="calc-note">For production, add more unit pairs and validate every conversion with tests before launch.</div>
+    <div className="calc-note">Conversions use standard unit relationships for the supported measurements. For technical or regulated work, verify the required unit standard and precision.</div>
   </CalculatorShell>;
 }
