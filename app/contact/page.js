@@ -1,0 +1,2 @@
+export const metadata={title:"Contact"};
+export default function Contact(){return <section className="section"><div className="container prose"><div className="eyebrow">CONTACT</div><h1>Contact us</h1><p>For the production site, replace this page with your real support email or contact form.</p><div className="contact-box"><b>Email</b><p>hello@example.com</p><small>Change this placeholder before launch.</small></div></div></section>}

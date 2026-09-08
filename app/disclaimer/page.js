@@ -1,0 +1,2 @@
+export const metadata={title:"Disclaimer"};
+export default function Disclaimer(){return <section className="section"><div className="container prose"><div className="eyebrow">IMPORTANT</div><h1>Calculator Disclaimer</h1><p>Results are estimates unless a page explicitly states otherwise. Tax, payroll, loan, mortgage and affordability results can differ from real-world figures because rules, rates, deductions, fees and personal circumstances vary.</p><p>Do not rely on these tools as a substitute for professional financial, tax, legal or lending advice.</p></div></section>}

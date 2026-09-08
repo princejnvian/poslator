@@ -1,0 +1,2 @@
+export const metadata={title:"Terms of Use"};
+export default function Terms(){return <section className="section"><div className="container prose"><div className="eyebrow">LEGAL</div><h1>Terms of Use</h1><p>This starter page is not legal advice. Replace it with terms appropriate for the final website and jurisdiction.</p><h2>Use of calculators</h2><p>Calculators are provided for general informational and educational purposes. Users should independently verify important financial, payroll, tax and lending decisions.</p></div></section>}
