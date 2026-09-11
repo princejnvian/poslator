@@ -1,9 +1,10 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import CalculatorShell from "@/components/CalculatorShell";
 import { Field, Result, Results } from "@/components/Field";
 
 function toMinutes(time) {
+  if (!time) return 0;
   const [h, m] = time.split(":").map(Number);
   return h * 60 + m;
 }
@@ -37,6 +38,11 @@ export function TimeCardCalculator() {
     ["Mon","08:30","17:00","30"],["Tue","08:30","17:00","30"],["Wed","08:30","17:00","30"],["Thu","08:30","17:00","30"],["Fri","08:30","17:00","30"]
   ]);
   const update = (i, j, v) => setRows(r => r.map((row, idx) => idx === i ? row.map((x,k)=>k===j?v:x) : row));
+  useEffect(() => {
+    const clear = () => setRows(r => r.map(row => [row[0], "", "", ""]));
+    window.addEventListener("poslator:clear-all", clear);
+    return () => window.removeEventListener("poslator:clear-all", clear);
+  }, []);
   const totals = useMemo(() => rows.reduce((s,r)=>s+Math.max(0,diffMinutes(r[1],r[2])-Number(r[3]||0)),0), [rows]);
   const regular = Math.min(totals, 40*60);
   const ot = Math.max(0, totals-40*60);

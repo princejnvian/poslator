@@ -1,4 +1,13 @@
+"use client";
+import React from "react";
+
 export function Field({ label, value, onChange, type = "number", min, max, step = "any", placeholder, suffix, options }) {
+  React.useEffect(() => {
+    const clear = () => onChange("");
+    window.addEventListener("poslator:clear-all", clear);
+    return () => window.removeEventListener("poslator:clear-all", clear);
+  }, [onChange]);
+
   return (
     <label className="field">
       <span>{label}</span>
@@ -8,15 +17,7 @@ export function Field({ label, value, onChange, type = "number", min, max, step 
         </select>
       ) : (
         <div className="input-wrap">
-          <input
-            type={type}
-            value={value}
-            onChange={e => onChange(e.target.value)}
-            min={min}
-            max={max}
-            step={step}
-            placeholder={placeholder}
-          />
+          <input type={type} value={value} onChange={e => onChange(e.target.value)} min={min} max={max} step={step} placeholder={placeholder}/>
           {suffix && <em>{suffix}</em>}
         </div>
       )}

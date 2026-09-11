@@ -150,7 +150,8 @@ export function DateCalculator() {
   const [start, setStart] = useState("2026-01-01");
   const [end, setEnd] = useState("2026-12-31");
   const a = parseDate(start), b = parseDate(end);
-  const days = Math.max(0, Math.round((b - a) / 86400000));
+  const validDates = start && end && !Number.isNaN(a.getTime()) && !Number.isNaN(b.getTime());
+  const days = validDates ? Math.max(0, Math.round((b - a) / 86400000)) : 0;
   const weeks = days / 7;
   const months = days / 30.4375;
   return <CalculatorShell title="Date Calculator" description="Find the number of days, weeks and approximate months between two dates.">

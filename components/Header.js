@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ThemeControls from "@/components/ThemeControls";
 
 export default function Header() {
   return (
@@ -13,6 +14,7 @@ export default function Header() {
             <Link href="/calculators">All Tools</Link>
             <Link href="/about">About</Link>
           </nav>
+          <ThemeControls />
           <Link href="/calculators" className="nav-cta">Open a tool <span>↗</span></Link>
         </div>
       </div>
