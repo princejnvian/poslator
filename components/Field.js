@@ -8,6 +8,8 @@ export function Field({ label, value, onChange, type = "number", min, max, step 
     return () => window.removeEventListener("poslator:clear-all", clear);
   }, [onChange]);
 
+  const inputMode = type === "number" ? "decimal" : undefined;
+
   return (
     <label className="field">
       <span>{label}</span>
@@ -17,7 +19,7 @@ export function Field({ label, value, onChange, type = "number", min, max, step 
         </select>
       ) : (
         <div className="input-wrap">
-          <input type={type} value={value} onChange={e => onChange(e.target.value)} min={min} max={max} step={step} placeholder={placeholder}/>
+          <input type={type} inputMode={inputMode} enterKeyHint="next" value={value} onChange={e => onChange(e.target.value)} min={min} max={max} step={step} placeholder={placeholder}/>
           {suffix && <em>{suffix}</em>}
         </div>
       )}

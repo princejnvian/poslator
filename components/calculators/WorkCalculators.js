@@ -50,7 +50,7 @@ export function TimeCardCalculator() {
   return <CalculatorShell title="Time Card Calculator" description="Track a work week, subtract breaks and estimate regular and overtime pay.">
     <div className="toolbar"><Field label="Hourly rate" value={rate} onChange={setRate} suffix="$/hr"/></div>
     <div className="table-wrap"><table className="time-table"><thead><tr><th>Day</th><th>Start</th><th>End</th><th>Break</th><th>Hours</th></tr></thead>
-    <tbody>{rows.map((r,i)=><tr key={r[0]}><td>{r[0]}</td><td><input type="time" value={r[1]} onChange={e=>update(i,1,e.target.value)}/></td><td><input type="time" value={r[2]} onChange={e=>update(i,2,e.target.value)}/></td><td><input type="number" value={r[3]} onChange={e=>update(i,3,e.target.value)}/></td><td>{hm(Math.max(0,diffMinutes(r[1],r[2])-Number(r[3]||0)))}</td></tr>)}</tbody></table></div>
+    <tbody>{rows.map((r,i)=><tr key={r[0]}><td>{r[0]}</td><td><input type="time" inputMode="none" enterKeyHint="next" value={r[1]} onChange={e=>update(i,1,e.target.value)}/></td><td><input type="time" inputMode="none" enterKeyHint="next" value={r[2]} onChange={e=>update(i,2,e.target.value)}/></td><td><input type="number" inputMode="decimal" enterKeyHint="next" value={r[3]} onChange={e=>update(i,3,e.target.value)}/></td><td>{hm(Math.max(0,diffMinutes(r[1],r[2])-Number(r[3]||0)))}</td></tr>)}</tbody></table></div>
     <Results><Result label="Regular hours" value={hm(regular)}/><Result label="Overtime hours" value={hm(ot)}/><Result label="Estimated gross pay" value={money(gross)} large/></Results>
     <div className="calc-note">Default overtime is estimated at 1.5× after 40 hours for the week. Employer/state rules can differ.</div>
   </CalculatorShell>;
