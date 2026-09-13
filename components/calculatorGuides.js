@@ -570,5 +570,509 @@ export const calculatorGuides = {
       { title: "Time Calculator", href: "/calculators/time-calculator", description: "Add or subtract hours and minutes." },
       { title: "Hours Worked Calculator", href: "/calculators/hours-worked-calculator", description: "Calculate elapsed work time." }
     ]
+  },
+  "mortgage-payoff-calculator": {
+    title: "Mortgage Payoff Calculator",
+    intro: "Estimate payoff time and potential interest impact from making extra mortgage payments.",
+    steps: ['Enter your current mortgage balance.', 'Enter the fixed interest rate and monthly payment.', 'Add any extra monthly payment you are considering.', 'Compare the estimated payoff time and interest.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "retirement-calculator": {
+    title: "Retirement Calculator",
+    intro: "Project potential retirement savings from current savings and regular contributions.",
+    steps: ['Enter current retirement savings.', 'Enter a monthly contribution.', 'Choose an assumed annual return.', 'Enter the number of years until retirement.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "savings-calculator": {
+    title: "Savings Calculator",
+    intro: "Estimate how deposits and interest can grow your savings over time.",
+    steps: ['Enter your starting savings.', 'Enter your regular monthly contribution.', 'Enter the annual interest rate.', 'Choose a savings period.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "debt-payoff-calculator": {
+    title: "Debt Payoff Calculator",
+    intro: "Estimate the time and interest required to pay off a balance at a fixed monthly payment.",
+    steps: ['Enter the current balance.', 'Enter the annual interest rate.', 'Enter the monthly payment.', 'Review payoff time and estimated interest.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "401k-calculator": {
+    title: "401(k) Calculator",
+    intro: "Project potential 401(k) growth using salary contributions, employer matching and an assumed return.",
+    steps: ['Enter salary and current 401(k) balance.', 'Enter your contribution percentage.', 'Enter the employer match percentage.', 'Choose an assumed return and time period.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "roth-ira-calculator": {
+    title: "Roth IRA Calculator",
+    intro: "Estimate potential Roth IRA growth from a current balance and recurring contributions.",
+    steps: ['Enter your current Roth IRA balance.', 'Enter your annual contribution.', 'Choose an assumed return.', 'Enter the number of years.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "apy-calculator": {
+    title: "APY Calculator",
+    intro: "Calculate annual percentage yield from a nominal rate and compounding frequency.",
+    steps: ['Enter the deposit amount.', 'Enter the nominal interest rate.', 'Enter how often interest compounds.', 'Review APY and one-year interest.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "apr-calculator": {
+    title: "APR Calculator",
+    intro: "Estimate APR when upfront loan fees are included with a fixed-rate payment.",
+    steps: ['Enter the loan amount.', 'Enter the stated interest rate.', 'Enter upfront fees.', 'Enter the loan term.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "interest-rate-calculator": {
+    title: "Interest Rate Calculator",
+    intro: "Find a simple annual interest rate from principal, interest earned and time.",
+    steps: ['Enter principal.', 'Enter interest earned.', 'Enter the time in years.', 'Review the simple annual rate.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "debt-to-income-ratio-calculator": {
+    title: "Debt-to-Income Ratio Calculator",
+    intro: "Calculate monthly DTI from gross income and recurring debt payments.",
+    steps: ['Enter gross monthly income.', 'Add housing and other recurring debts.', 'Review total monthly debt.', 'Use the resulting DTI as a budgeting estimate.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "emergency-fund-calculator": {
+    title: "Emergency Fund Calculator",
+    intro: "Estimate an emergency savings target based on essential monthly expenses.",
+    steps: ['Enter essential monthly expenses.', 'Choose how many months you want covered.', 'Enter current emergency savings.', 'Review the target and remaining amount.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "net-worth-calculator": {
+    title: "Net Worth Calculator",
+    intro: "Calculate net worth by subtracting liabilities from total assets.",
+    steps: ['Enter cash and savings.', 'Add investments and major assets.', 'Enter mortgage and other liabilities.', 'Review total assets, liabilities and net worth.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "hourly-to-salary-calculator": {
+    title: "Hourly to Salary Calculator",
+    intro: "Convert hourly pay into weekly, monthly and annual gross pay.",
+    steps: ['Enter hourly pay.', 'Enter weekly hours.', 'Enter working weeks per year.', 'Review annual and monthly equivalents.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "salary-to-hourly-calculator": {
+    title: "Salary to Hourly Calculator",
+    intro: "Convert annual salary into an estimated hourly wage.",
+    steps: ['Enter annual salary.', 'Enter weekly hours.', 'Enter working weeks per year.', 'Review hourly, weekly and monthly equivalents.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "commission-calculator": {
+    title: "Commission Calculator",
+    intro: "Calculate sales commission from a sales amount and commission percentage.",
+    steps: ['Enter the sales amount.', 'Enter the commission rate.', 'Review commission earned.', 'Review the sales-plus-commission figure.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "bonus-calculator": {
+    title: "Bonus Calculator",
+    intro: "Estimate a gross bonus from salary and a bonus percentage.",
+    steps: ['Enter annual salary.', 'Enter the bonus percentage.', 'Review the estimated bonus.', 'Compare total salary plus bonus.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "pto-calculator": {
+    title: "PTO Calculator",
+    intro: "Estimate remaining paid time off from a PTO bank and days used.",
+    steps: ['Enter available PTO hours.', 'Enter the number of PTO days represented by the bank.', 'Enter days already used.', 'Review remaining days and hours.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "time-zone-converter": {
+    title: "Time Zone Converter",
+    intro: "Convert a clock time between common fixed UTC offsets for quick scheduling.",
+    steps: ['Enter the clock time.', 'Choose the source offset.', 'Choose the destination offset.', 'Review the converted time.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "fraction-calculator": {
+    title: "Fraction Calculator",
+    intro: "Perform basic operations on two fractions and simplify the result.",
+    steps: ['Enter the first numerator and denominator.', 'Choose an operation.', 'Enter the second fraction.', 'Review the simplified fraction and decimal.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "ratio-calculator": {
+    title: "Ratio Calculator",
+    intro: "Simplify a ratio and solve a simple proportional value.",
+    steps: ['Enter the first ratio value.', 'Enter the second ratio value.', 'Enter a known proportional value.', 'Review the simplified ratio and result.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "average-calculator": {
+    title: "Average Calculator",
+    intro: "Find the arithmetic mean of a list of numbers.",
+    steps: ['Enter numbers separated by commas.', 'Review the number count.', 'Review the sum.', 'Review the average.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "random-number-generator": {
+    title: "Random Number Generator",
+    intro: "Generate random integers between a minimum and maximum value.",
+    steps: ['Enter a minimum.', 'Enter a maximum.', 'Choose how many numbers to generate.', 'Select Generate again for a new set.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "gcf-calculator": {
+    title: "GCF Calculator",
+    intro: "Find the greatest common factor of two whole numbers.",
+    steps: ['Enter the first whole number.', 'Enter the second whole number.', 'Review the greatest common factor.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "lcm-calculator": {
+    title: "LCM Calculator",
+    intro: "Find the least common multiple of two whole numbers.",
+    steps: ['Enter the first whole number.', 'Enter the second whole number.', 'Review the least common multiple.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "scientific-calculator": {
+    title: "Scientific Calculator",
+    intro: "Evaluate common arithmetic expressions with parentheses, powers and basic operators.",
+    steps: ['Enter a numeric expression.', 'Use parentheses when needed.', 'Use ^ for powers.', 'Review the calculated result.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "days-between-dates-calculator": {
+    title: "Days Between Dates Calculator",
+    intro: "Count calendar days between two dates, including both endpoints.",
+    steps: ['Choose the start date.', 'Choose the end date.', 'Review the inclusive day count.', 'Use the week value for planning.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "gpa-calculator": {
+    title: "GPA Calculator",
+    intro: "Calculate a simple average of entered course grade points.",
+    steps: ['Enter each course GPA.', 'Review the average.', 'Remember that schools may weight courses differently.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
+  },
+  "grade-calculator": {
+    title: "Grade Calculator",
+    intro: "Calculate a percentage grade and a simple A/B/C/D/F estimate.",
+    steps: ['Enter points earned.', 'Enter points possible.', 'Review the percentage.', 'Review the simple letter-grade estimate.'],
+    howItWorks: "The calculator applies the inputs you enter using the formula shown by the tool and updates the result in your browser.",
+    example: "Change the inputs to match your situation, then compare the main result with the supporting figures shown below it.",
+    tips: ["Use realistic inputs and check units before relying on the result.", "Results are estimates when real-world rules, rates or assumptions vary.", "Save or print a result if you want a record of the calculation.", "For financial or academic decisions, verify important figures with the relevant official source."],
+    faqs: [
+      { question: "Is this calculator free?", answer: "Yes. POSLATOR calculators run in your browser with no signup required." },
+      { question: "Are the results exact?", answer: "The arithmetic is calculated from your inputs, but real-world rules, fees, taxes, limits or policies may make an actual result different." },
+      { question: "Can I print or share my result?", answer: "Yes. Use the calculator action buttons to copy, share, print or create a full report." }
+    ],
+    related: [
+      { title: "All Calculators", href: "/calculators", description: "Browse the full POSLATOR calculator library." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
+      { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
+    ]
   }
 };
