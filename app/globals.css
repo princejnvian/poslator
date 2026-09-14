@@ -71,6 +71,43 @@ html[data-theme="dark"] .field input:focus,html[data-theme="dark"] .field select
 @media(max-width:760px){.calc-history{padding:14px 18px}.calc-history-item{display:block}.calc-history-item>b{display:block;margin-top:5px}.calc-action{min-width:0}.calc-action span{font-size:10px}}
 
 /* Clean, calculator-specific print / PDF report */
+/* Desktop calculator layout: related calculators live in a contained right sidebar.
+   Below the desktop breakpoint the original single-column/mobile layout is preserved. */
+@media(min-width:1101px){
+  .calculator-page{
+    width:min(1180px,calc(100% - 40px));
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 280px;
+    column-gap:24px;
+    align-items:start;
+  }
+  .calculator-page > :first-child{grid-column:1;min-width:0;}
+  .calculator-page > .calculator-guide{display:contents;}
+  .calculator-page .guide-intro,
+  .calculator-page .guide-block,
+  .calculator-page .guide-grid{grid-column:1;min-width:0;}
+  .calculator-page .guide-related{
+    grid-column:2;
+    grid-row:1;
+    position:sticky;
+    top:94px;
+    margin-top:0;
+    min-width:0;
+    width:100%;
+    align-self:start;
+  }
+  .calculator-page .guide-related .related-links{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  .calculator-page .related-link{
+    min-width:0;
+  }
+  .calculator-page .related-link span{
+    min-width:0;
+  }
+}
+
 @media print{
   @page{size:auto;margin:14mm}
   html,body{background:#fff!important;color:#111!important;margin:0!important;padding:0!important}
