@@ -1,3 +1,4 @@
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -10,4 +11,20 @@ metadataBase: new URL("https://www.poslator.com"),
   robots: { index: true, follow: true }
 };
 
-export default function RootLayout({ children }) { return <html lang="en-US"><body><Header /><main>{children}</main><Footer /></body></html>; }
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en-US">
+      <body>
+        <Script
+          async
+          strategy="beforeInteractive"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9015438747151787"
+          crossOrigin="anonymous"
+        />
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
+}
