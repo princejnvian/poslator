@@ -1,5 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import tools from "@/components/calculatorTools";
 
 const HISTORY_KEY = "poslator-calculation-history";
 const MAX_HISTORY = 60;
@@ -49,6 +52,60 @@ function getPrintSnapshot(root) {
     table: root?.querySelector(".time-table") ? Array.from(root.querySelectorAll(".time-table tbody tr")).map((tr) => Array.from(tr.children).map((cell) => cell.querySelector("input")?.value ?? cell.textContent?.trim() ?? "")) : [],
     tableHeaders: root?.querySelector(".time-table") ? Array.from(root.querySelectorAll(".time-table thead th")).map((th) => th.textContent?.trim() || "") : [],
   };
+}
+
+function MobileCalculatorSearch() {
+  const router = useRouter();
+  const [query, setQuery] = useState("");
+  const [open, setOpen] = useState(false);
+
+  const q = query.trim().toLowerCase();
+  const results = q
+    ? tools.filter(([title, desc]) => `${title} ${desc}`.toLowerCase().includes(q)).slice(0, 6)
+    : [];
+
+  function goToFirst(e) {
+    if (e.key !== "Enter" || !results.length) return;
+    e.preventDefault();
+    router.push(results[0][2]);
+    setQuery("");
+    setOpen(false);
+  }
+
+  return (
+    <div className="mobile-calc-search">
+      <div className="mobile-calc-search-box">
+        <span aria-hidden="true">⌕</span>
+        <input
+          value={query}
+          onChange={(e) => { setQuery(e.target.value); setOpen(true); }}
+          onFocus={() => setOpen(true)}
+          onKeyDown={goToFirst}
+          placeholder="Search calculator..."
+          aria-label="Search calculator"
+          autoComplete="off"
+        />
+      </div>
+      {open && query.trim() && (
+        <div className="mobile-calc-search-results">
+          {results.length ? results.map(([title, desc, href]) => (
+            <Link
+              key={href}
+              href={href}
+              onClick={() => { setQuery(""); setOpen(false); }}
+              className="mobile-calc-search-result"
+            >
+              <span className="mobile-calc-result-icon">+</span>
+              <span><strong>{title}</strong><small>{desc}</small></span>
+              <span className="mobile-calc-result-arrow">→</span>
+            </Link>
+          )) : (
+            <div className="mobile-calc-search-empty">No calculator found. Try “paycheck”, “grade pay”, “GST” or “mortgage”.</div>
+          )}
+        </div>
+      )}
+    </div>
+  );
 }
 
 function readHistory() {
@@ -205,6 +262,7 @@ export default function CalculatorShell({ title, description, children, note }) 
 
   return (
     <>
+      <MobileCalculatorSearch />
       <div className={focus ? "calculator-focus-backdrop" : ""}>
         <div ref={rootRef} className={focus ? "calc-shell calc-shell-focus" : "calc-shell"}>
         <div className="calc-head">

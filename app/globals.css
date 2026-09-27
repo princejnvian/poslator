@@ -133,3 +133,24 @@ html[data-theme="dark"] .field input:focus,html[data-theme="dark"] .field select
   .print-table{width:100%;border-collapse:collapse;font-size:10px}.print-table th,.print-table td{border:1px solid #ddd;padding:7px;text-align:left}.print-table th{background:#f4f5f6;color:#333}.print-note{font-size:9px;line-height:1.5;color:#666;border-top:1px solid #ddd;padding-top:9px;margin-top:5px}
   .print-report footer{border-top:1px solid #ddd;padding-top:9px;font-size:8px;color:#777;margin-top:25px}
 }
+
+/* Mobile calculator search: compact navigation/search box shown only on calculator pages. */
+.mobile-calc-search{display:none;position:relative;margin:0 0 12px;z-index:20}
+.mobile-calc-search-box{height:46px;display:flex;align-items:center;gap:9px;background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:0 13px;box-shadow:0 7px 20px rgba(15,23,42,.07)}
+.mobile-calc-search-box>span{font-size:22px;line-height:1;color:var(--text-soft);transform:rotate(-20deg)}
+.mobile-calc-search-box input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:var(--ink);font-size:13px}
+.mobile-calc-search-box input::placeholder{color:var(--text-soft)}
+.mobile-calc-search-results{position:absolute;top:52px;left:0;right:0;background:var(--surface);border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow);overflow:hidden}
+.mobile-calc-search-result{display:grid;grid-template-columns:28px minmax(0,1fr) 18px;gap:9px;align-items:center;padding:10px 11px;border-bottom:1px solid var(--line)}
+.mobile-calc-search-result:last-child{border-bottom:0}
+.mobile-calc-search-result:active{background:var(--surface-soft)}
+.mobile-calc-search-result strong,.mobile-calc-search-result small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mobile-calc-search-result strong{font-size:12px;color:var(--ink)}
+.mobile-calc-search-result small{font-size:10px;color:var(--text-soft);margin-top:2px}
+.mobile-calc-result-icon{display:grid;place-items:center;width:26px;height:26px;border-radius:8px;background:#edf4ff;color:var(--brand);font-weight:900}
+.mobile-calc-result-arrow{color:var(--brand);font-weight:800}
+.mobile-calc-search-empty{padding:14px 12px;font-size:11px;color:var(--text-soft);line-height:1.45}
+
+@media(max-width:760px){
+  .mobile-calc-search{display:block}
+}
