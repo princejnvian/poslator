@@ -53,7 +53,20 @@ const tools = [
   ["Scientific Calculator", "Evaluate common arithmetic expressions.", "/calculators/scientific-calculator", "Everyday Math"],
   ["Days Between Dates Calculator", "Count calendar days including both dates.", "/calculators/days-between-dates-calculator", "Dates & Time"],
   ["GPA Calculator", "Calculate a simple grade point average.", "/calculators/gpa-calculator", "Education"],
-  ["Grade Calculator", "Calculate percentage and letter-grade estimate.", "/calculators/grade-calculator", "Education"]
+  ["Grade Calculator", "Calculate percentage and letter-grade estimate.", "/calculators/grade-calculator", "Education"],
+  ["Grade Pay Calculator", "Calculate basic pay, grade pay, DA and HRA for a quick salary estimate.", "/calculators/grade-pay-calculator", "India Salary & Tax"],
+  ["7th Pay Commission Salary Calculator", "Estimate basic pay, DA, HRA, transport allowance and NPS.", "/calculators/7th-pay-commission-salary-calculator", "India Salary & Tax"],
+  ["DA Calculator India", "Calculate Dearness Allowance from basic pay and DA rate.", "/calculators/da-calculator-india", "India Salary & Tax"],
+  ["HRA Calculator India", "Estimate HRA exemption from rent and salary.", "/calculators/hra-calculator-india", "India Salary & Tax"],
+  ["EPF Calculator India", "Estimate employee and employer PF contributions.", "/calculators/epf-calculator-india", "India Salary & Tax"],
+  ["Gratuity Calculator India", "Estimate gratuity from salary and years of service.", "/calculators/gratuity-calculator-india", "India Salary & Tax"],
+  ["NPS Calculator India", "Project NPS corpus and an illustrative pension.", "/calculators/nps-calculator-india", "India Finance"],
+  ["GST Calculator India", "Add or extract GST from an amount.", "/calculators/gst-calculator-india", "India Finance"],
+  ["CTC to In-Hand Salary Calculator India", "Estimate Indian take-home pay from CTC.", "/calculators/ctc-to-in-hand-salary-india", "India Salary & Tax"],
+  ["Salary Increment Calculator India", "Calculate salary hike amount and new salary.", "/calculators/salary-increment-calculator-india", "India Salary & Tax"],
+  ["Income Tax Calculator India", "Estimate AY 2026-27 tax under old or new regime.", "/calculators/income-tax-calculator-india", "India Salary & Tax"],
+  ["PPF Calculator India", "Project PPF maturity value from contributions and rate.", "/calculators/ppf-calculator-india", "India Finance"],
+  ["SIP Calculator India", "Project potential SIP value from monthly investments.", "/calculators/sip-calculator-india", "India Finance"],
 ];
 
 const categories = ["All", ...Array.from(new Set(tools.map((t) => t[3])))];

@@ -52,7 +52,20 @@ const tools = [
   ["Scientific Calculator", "Perform common scientific and advanced math calculations.", "/calculators/scientific-calculator"],
   ["Days Between Dates Calculator", "Find the exact number of days between two dates.", "/calculators/days-between-dates-calculator"],
   ["GPA Calculator", "Calculate grade point average from courses and grades.", "/calculators/gpa-calculator"],
-  ["Grade Calculator", "Calculate grades, percentages and required scores.", "/calculators/grade-calculator"]
+  ["Grade Calculator", "Calculate grades, percentages and required scores.", "/calculators/grade-calculator"],
+  ["Grade Pay Calculator", "Calculate basic pay, grade pay, DA and HRA for a quick salary estimate.", "/calculators/grade-pay-calculator"],
+  ["7th Pay Commission Salary Calculator", "Estimate basic pay, DA, HRA, transport allowance and NPS.", "/calculators/7th-pay-commission-salary-calculator"],
+  ["DA Calculator India", "Calculate Dearness Allowance from basic pay and DA rate.", "/calculators/da-calculator-india"],
+  ["HRA Calculator India", "Estimate HRA exemption from rent and salary.", "/calculators/hra-calculator-india"],
+  ["EPF Calculator India", "Estimate employee and employer PF contributions.", "/calculators/epf-calculator-india"],
+  ["Gratuity Calculator India", "Estimate gratuity from salary and years of service.", "/calculators/gratuity-calculator-india"],
+  ["NPS Calculator India", "Project NPS corpus and an illustrative pension.", "/calculators/nps-calculator-india"],
+  ["GST Calculator India", "Add or extract GST from an amount.", "/calculators/gst-calculator-india"],
+  ["CTC to In-Hand Salary Calculator India", "Estimate Indian take-home pay from CTC.", "/calculators/ctc-to-in-hand-salary-india"],
+  ["Salary Increment Calculator India", "Calculate salary hike amount and new salary.", "/calculators/salary-increment-calculator-india"],
+  ["Income Tax Calculator India", "Estimate AY 2026-27 tax under old or new regime.", "/calculators/income-tax-calculator-india"],
+  ["PPF Calculator India", "Project PPF maturity value from contributions and rate.", "/calculators/ppf-calculator-india"],
+  ["SIP Calculator India", "Project potential SIP value from monthly investments.", "/calculators/sip-calculator-india"],
 ];
 
 const popular = [
