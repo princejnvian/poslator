@@ -9,8 +9,8 @@ metadataBase: new URL("https://www.poslator.com"),
   keywords: ["calculator", "online calculator", "time card calculator", "paycheck calculator", "salary calculator", "mortgage calculator", "loan calculator", "compound interest calculator", "investment calculator", "car loan calculator", "BMI calculator", "date calculator", "tip calculator", "unit converter", "grade pay calculator", "7th pay commission calculator", "DA calculator India", "HRA calculator India", "EPF calculator India", "gratuity calculator India", "NPS calculator India", "GST calculator India", "income tax calculator India", "PPF calculator India", "SIP calculator India"],
   robots: { index: true, follow: true },
   icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
     apple: "/apple-icon.png"
   }
 };

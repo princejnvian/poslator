@@ -7,7 +7,7 @@ export default function Header() {
       <div className="topbar">
         <div className="container nav">
           <Link href="/" className="brand" aria-label="Poslator home">
-            <span className="brand-mark">P</span><span>POSLATOR</span>
+            <span className="brand-mark"><img src="/poslator-logo.svg" alt="" aria-hidden="true" /></span><span>POSLATOR</span>
           </Link>
           <nav className="main-nav">
             <Link href="/calculators">Calculators</Link>
