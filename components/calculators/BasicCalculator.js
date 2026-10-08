@@ -3,90 +3,74 @@
 import { useEffect, useState } from "react";
 import CalculatorShell from "@/components/CalculatorShell";
 
-function tokenize(input) {
-  const cleaned = input.replace(/\s+/g, "");
-  if (!cleaned) return [];
-  const tokens = cleaned.match(/(?:\d+(?:\.\d*)?|\.\d+|[()+\-*/^%])/g);
-  if (!tokens || tokens.join("") !== cleaned) return null;
-  return tokens;
-}
-
 function evaluate(input) {
-  const tokens = tokenize(input);
-  if (!tokens) return null;
-  if (!tokens.length) return 0;
+  const source = input.replace(/\s+/g, "");
+  if (!source) return 0;
+  const tokens = source.match(/(?:\d+(?:\.\d*)?|\.\d+|[()+\-*/^%])/g);
+  if (!tokens || tokens.join("") !== source) return null;
 
-  const output = [];
-  const operators = [];
-  const precedence = { "+": 1, "-": 1, "*": 2, "/": 2, "%": 2, "^": 3 };
-  let expectValue = true;
+  let index = 0;
+  const peek = () => tokens[index];
+  const take = () => tokens[index++];
 
-  for (const token of tokens) {
-    if (/^(?:\d+(?:\.\d*)?|\.\d+)$/.test(token)) {
-      output.push(Number(token));
-      expectValue = false;
-      continue;
+  function expression() {
+    let value = term();
+    while (peek() === "+" || peek() === "-") {
+      const op = take();
+      const rhs = term();
+      if (rhs === null) return null;
+      value = op === "+" ? value + rhs : value - rhs;
     }
+    return value;
+  }
 
-    if (token === "-" && expectValue) {
-      output.push(0);
-      operators.push("-");
-      expectValue = true;
-      continue;
+  function term() {
+    let value = power();
+    while (peek() === "*" || peek() === "/" || peek() === "%") {
+      const op = take();
+      const rhs = power();
+      if (rhs === null) return null;
+      if ((op === "/" || op === "%") && rhs === 0) return null;
+      value = op === "*" ? value * rhs : op === "/" ? value / rhs : value % rhs;
     }
+    return value;
+  }
 
+  function power() {
+    let value = unary();
+    if (peek() === "^") {
+      take();
+      const rhs = power();
+      if (rhs === null) return null;
+      value = Math.pow(value, rhs);
+    }
+    return value;
+  }
+
+  function unary() {
+    if (peek() === "+") { take(); return unary(); }
+    if (peek() === "-") { take(); return -unary(); }
+    return primary();
+  }
+
+  function primary() {
+    const token = peek();
+    if (!token) return null;
     if (token === "(") {
-      operators.push(token);
-      expectValue = true;
-      continue;
+      take();
+      const value = expression();
+      if (take() !== ")") return null;
+      return value;
     }
-
-    if (token === ")") {
-      while (operators.length && operators.at(-1) !== "(") output.push(operators.pop());
-      if (operators.pop() !== "(") return null;
-      expectValue = false;
-      continue;
+    if (/^(?:\d+(?:\.\d*)?|\.\d+)$/.test(token)) {
+      take();
+      return Number(token);
     }
-
-    if (!precedence[token] || expectValue) return null;
-    while (
-      operators.length &&
-      operators.at(-1) !== "(" &&
-      ((token !== "^" && precedence[operators.at(-1)] >= precedence[token]) ||
-        (token === "^" && precedence[operators.at(-1)] > precedence[token]))
-    ) {
-      output.push(operators.pop());
-    }
-    operators.push(token);
-    expectValue = true;
+    return null;
   }
 
-  if (expectValue) return null;
-  while (operators.length) {
-    if (operators.at(-1) === "(") return null;
-    output.push(operators.pop());
-  }
-
-  const stack = [];
-  for (const token of output) {
-    if (typeof token === "number") {
-      stack.push(token);
-      continue;
-    }
-    const b = stack.pop();
-    const a = stack.pop();
-    if (a === undefined || b === undefined) return null;
-    let value;
-    if (token === "+") value = a + b;
-    else if (token === "-") value = a - b;
-    else if (token === "*") value = a * b;
-    else if (token === "/") value = b === 0 ? NaN : a / b;
-    else if (token === "%") value = b === 0 ? NaN : a % b;
-    else value = Math.pow(a, b);
-    if (!Number.isFinite(value)) return null;
-    stack.push(value);
-  }
-  return stack.length === 1 && Number.isFinite(stack[0]) ? stack[0] : null;
+  const value = expression();
+  return index === tokens.length && Number.isFinite(value) ? value : null;
 }
 
 function formatNumber(value) {
@@ -160,6 +144,7 @@ export function BasicCalculator() {
     if (/[+\-*/^]$/.test(next)) next = `${next.slice(0, -1)}${op}`;
     else next += op;
     setExpression(next);
+    setDisplay(op === "+" ? "+" : op === "-" ? "−" : op === "*" ? "×" : "÷");
     setJustEvaluated(false);
   }
 
@@ -245,8 +230,9 @@ export function BasicCalculator() {
     { label: "2", action: () => append("2"), type: "number" },
     { label: "3", action: () => append("3"), type: "number" },
     { label: "−", action: () => operator("-"), type: "operator", aria: "Subtract" },
-    { label: "0", action: () => append("0"), type: "number", wide: true },
+    { label: "0", action: () => append("0"), type: "number" },
     { label: ".", action: () => append("."), type: "number" },
+    { label: "+", action: () => operator("+"), type: "operator", aria: "Add" },
     { label: "=", action: calculate, type: "equals", aria: "Equals" },
   ];
 
@@ -265,7 +251,7 @@ export function BasicCalculator() {
             <button
               key={button.label}
               type="button"
-              className={`phone-key phone-key-${button.type}${button.wide ? " phone-key-wide" : ""}`}
+              className={`phone-key phone-key-${button.type}`}
               onClick={button.action}
               aria-label={button.aria || button.label}
             >
@@ -273,7 +259,7 @@ export function BasicCalculator() {
             </button>
           ))}
         </div>
-        <div className="phone-hint">Keyboard supported · Press Enter for = · Esc for AC</div>
+        <div className="phone-hint">Keyboard supported · Enter = · Esc = AC · Backspace = delete</div>
       </div>
     </CalculatorShell>
   );

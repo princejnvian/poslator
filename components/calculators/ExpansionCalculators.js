@@ -146,24 +146,184 @@ export function RandomNumberGenerator(){
 export function GCFCalculator(){ const [a,setA]=useState("48"),[b,setB]=useState("18"); const g=gcd(a,b); return <CalculatorShell title="GCF Calculator" description="Find the greatest common factor of two whole numbers."><div className="form-grid"><Field label="First number" value={a} onChange={setA}/><Field label="Second number" value={b} onChange={setB}/></div><Results><Result label="Greatest common factor" value={String(g)} large/></Results></CalculatorShell>; }
 export function LCMCalculator(){ const [a,setA]=useState("12"),[b,setB]=useState("18"); const v=lcm(a,b); return <CalculatorShell title="LCM Calculator" description="Find the least common multiple of two whole numbers."><div className="form-grid"><Field label="First number" value={a} onChange={setA}/><Field label="Second number" value={b} onChange={setB}/></div><Results><Result label="Least common multiple" value={String(v)} large/></Results></CalculatorShell>; }
 
-function evaluateArithmetic(input){
- const tokens=input.replace(/\s+/g,"").match(/(?:\d+(?:\.\d*)?|\.\d+|[()+\-*/^%])/g);
- if(!tokens || tokens.join("")!==input.replace(/\s+/g,"")) return null;
- const out=[], ops=[], prec={"+":1,"-":1,"*":2,"/":2,"%":2,"^":3};
- let expectValue=true;
- for(const t of tokens){
-  if(/^[0-9.]+$/.test(t)){out.push(Number(t));expectValue=false;continue;}
-  if(t==="-" && expectValue){out.push(0);}
-  if(t==="("){ops.push(t);expectValue=true;continue;}
-  if(t===")"){while(ops.length&&ops.at(-1)!=="(") out.push(ops.pop()); if(ops.pop()!=="(") return null; expectValue=false;continue;}
-  if(!prec[t]) return null;
-  while(ops.length&&ops.at(-1)!=="("&&((t!=="^"&&prec[ops.at(-1)]>=prec[t])||(t==="^"&&prec[ops.at(-1)]>prec[t]))) out.push(ops.pop());
-  ops.push(t);expectValue=true;
- }
- while(ops.length){if(ops.at(-1)==="(")return null;out.push(ops.pop());}
- const st=[];for(const t of out){if(typeof t==="number"){st.push(t);continue;}const b=st.pop(),a=st.pop();if(a===undefined||b===undefined)return null;let v=t==="+"?a+b:t==="-"?a-b:t==="*"?a*b:t==="/"?(b===0?NaN:a/b):t==="%"?a%b:Math.pow(a,b);if(!Number.isFinite(v))return null;st.push(v);}return st.length===1&&Number.isFinite(st[0])?st[0]:null;
+function evaluateArithmetic(input, degrees = true) {
+  const source = input.replace(/[×]/g, "*").replace(/[÷]/g, "/").replace(/π/g, "pi").replace(/√/g, "sqrt").replace(/\s+/g, "");
+  if (!source) return null;
+
+  const tokens = source.match(/(?:\d+(?:\.\d*)?|\.\d+|[A-Za-z]+|[()+\-*/^%!])/g);
+  if (!tokens || tokens.join("") !== source) return null;
+
+  let index = 0;
+  const constants = { pi: Math.PI, e: Math.E };
+  const functions = {
+    sin: x => Math.sin(degrees ? x * Math.PI / 180 : x),
+    cos: x => Math.cos(degrees ? x * Math.PI / 180 : x),
+    tan: x => Math.tan(degrees ? x * Math.PI / 180 : x),
+    asin: x => degrees ? Math.asin(x) * 180 / Math.PI : Math.asin(x),
+    acos: x => degrees ? Math.acos(x) * 180 / Math.PI : Math.acos(x),
+    atan: x => degrees ? Math.atan(x) * 180 / Math.PI : Math.atan(x),
+    sqrt: x => Math.sqrt(x),
+    cbrt: x => Math.cbrt(x),
+    log: x => Math.log10(x),
+    ln: x => Math.log(x),
+    abs: x => Math.abs(x),
+    exp: x => Math.exp(x),
+  };
+
+  const peek = () => tokens[index];
+  const take = () => tokens[index++];
+
+  function factorial(n) {
+    if (!Number.isFinite(n) || n < 0 || Math.floor(n) !== n || n > 170) return NaN;
+    let value = 1;
+    for (let i = 2; i <= n; i++) value *= i;
+    return value;
+  }
+
+  function parseExpression() {
+    let value = parseTerm();
+    while (peek() === "+" || peek() === "-") {
+      const op = take();
+      const rhs = parseTerm();
+      if (rhs === null) return null;
+      value = op === "+" ? value + rhs : value - rhs;
+    }
+    return value;
+  }
+
+  function parseTerm() {
+    let value = parsePower();
+    while (peek() === "*" || peek() === "/" || peek() === "%") {
+      const op = take();
+      const rhs = parsePower();
+      if (rhs === null) return null;
+      if (op === "/" && rhs === 0) return NaN;
+      if (op === "%" && rhs === 0) return NaN;
+      value = op === "*" ? value * rhs : op === "/" ? value / rhs : value % rhs;
+    }
+    return value;
+  }
+
+  function parsePower() {
+    let value = parseUnary();
+    if (peek() === "^") {
+      take();
+      const rhs = parsePower();
+      if (rhs === null) return null;
+      value = Math.pow(value, rhs);
+    }
+    return value;
+  }
+
+  function parseUnary() {
+    if (peek() === "+") { take(); return parseUnary(); }
+    if (peek() === "-") { take(); return -parseUnary(); }
+    return parsePostfix();
+  }
+
+  function parsePostfix() {
+    let value = parsePrimary();
+    while (peek() === "!" || peek() === "%") {
+      const op = take();
+      value = op === "!" ? factorial(value) : value / 100;
+    }
+    return value;
+  }
+
+  function parsePrimary() {
+    const token = peek();
+    if (!token) return null;
+
+    if (token === "(") {
+      take();
+      const value = parseExpression();
+      if (take() !== ")") return null;
+      return value;
+    }
+
+    if (/^(?:\d+(?:\.\d*)?|\.\d+)$/.test(token)) {
+      take();
+      return Number(token);
+    }
+
+    if (/^[A-Za-z]+$/.test(token)) {
+      take();
+      if (Object.prototype.hasOwnProperty.call(constants, token)) return constants[token];
+      if (!functions[token]) return null;
+      let value;
+      if (peek() === "(") {
+        take();
+        value = parseExpression();
+        if (take() !== ")") return null;
+      } else {
+        value = parsePrimary();
+      }
+      return functions[token](value);
+    }
+
+    return null;
+  }
+
+  const value = parseExpression();
+  if (index !== tokens.length || !Number.isFinite(value)) return null;
+  return value;
 }
-export function ScientificCalculator(){ const [expr,setExpr]=useState("2*(5+3)^2"); const v=evaluateArithmetic(expr), result=v===null?"—":v.toFixed(6).replace(/\.0+$/,'').replace(/(\.\d*?)0+$/,'$1'); return <CalculatorShell title="Scientific Calculator" description="Evaluate common arithmetic expressions with parentheses, powers and percentages."><div className="form-grid"><Field label="Expression" value={expr} onChange={setExpr} type="text" placeholder="2*(5+3)^2"/></div><Results><Result label="Result" value={result} large/></Results><div className="calc-note">Supports basic arithmetic, parentheses, powers (^), division, multiplication, addition, subtraction and remainder (%).</div></CalculatorShell>; }
+
+export function ScientificCalculator() {
+  const [expr, setExpr] = useState("2*(5+3)^2");
+  const [degrees, setDegrees] = useState(true);
+  const value = evaluateArithmetic(expr, degrees);
+  const result = value === null ? "Error" : Number(value.toPrecision(12)).toLocaleString("en-US", { maximumFractionDigits: 10 });
+
+  function insert(value) {
+    setExpr((current) => current === "0" ? value : `${current}${value}`);
+  }
+  function clear() { setExpr(""); }
+  function backspace() { setExpr((current) => current.slice(0, -1)); }
+  function calculate() {
+    const current = evaluateArithmetic(expr, degrees);
+    if (current !== null) setExpr(Number(current.toPrecision(12)).toString());
+  }
+  function handleKeyDown(event) {
+    if (event.key === "Enter" || event.key === "=") { calculate(); event.preventDefault(); }
+    else if (event.key === "Escape") { clear(); event.preventDefault(); }
+    else if (event.key === "Backspace") { backspace(); event.preventDefault(); }
+  }
+
+  const keys = [
+    ["AC", clear, "utility"], ["⌫", backspace, "utility"], ["(", () => insert("("), "utility"], [")", () => insert(")"), "utility"],
+    ["sin", () => insert("sin("), "function"], ["cos", () => insert("cos("), "function"], ["tan", () => insert("tan("), "function"], ["√", () => insert("sqrt("), "function"],
+    ["log", () => insert("log("), "function"], ["ln", () => insert("ln("), "function"], ["π", () => insert("pi"), "constant"], ["e", () => insert("e"), "constant"],
+    ["7", () => insert("7"), "number"], ["8", () => insert("8"), "number"], ["9", () => insert("9"), "number"], ["÷", () => insert("/"), "operator"],
+    ["4", () => insert("4"), "number"], ["5", () => insert("5"), "number"], ["6", () => insert("6"), "number"], ["×", () => insert("*"), "operator"],
+    ["1", () => insert("1"), "number"], ["2", () => insert("2"), "number"], ["3", () => insert("3"), "number"], ["−", () => insert("-"), "operator"],
+    ["0", () => insert("0"), "number"], [".", () => insert("."), "number"], ["^", () => insert("^"), "operator"], ["+", () => insert("+"), "operator"],
+    ["%", () => insert("%"), "operator"], ["!", () => insert("!"), "operator"], ["Deg", () => setDegrees((v) => !v), "mode"], ["=", calculate, "equals"],
+  ];
+
+  return (
+    <CalculatorShell title="Scientific Calculator" description="A full scientific calculator for powers, roots, trigonometry, logarithms, constants and everyday arithmetic.">
+      <div className="scientific-calculator" onKeyDown={handleKeyDown} tabIndex={0} aria-label="Scientific calculator">
+        <div className="scientific-display">
+          <div className="scientific-expression">{expr || "0"}</div>
+          <div className="scientific-result-label">RESULT</div>
+          <div className="scientific-result" aria-live="polite">{result}</div>
+        </div>
+        <div className="scientific-mode-row">
+          <span>{degrees ? "DEG" : "RAD"}</span>
+          <button type="button" onClick={() => setDegrees((v) => !v)}>{degrees ? "Switch to RAD" : "Switch to DEG"}</button>
+        </div>
+        <div className="scientific-keypad">
+          {keys.map(([label, action, type], index) => (
+            <button key={`${label}-${index}`} type="button" className={`scientific-key scientific-key-${type}`} onClick={action} aria-label={label}>{label}</button>
+          ))}
+        </div>
+        <div className="scientific-hint">Try: <b>sin(30)+sqrt(25)</b> · Enter = calculate · Esc = clear</div>
+      </div>
+    </CalculatorShell>
+  );
+}
+
 export function DateDifferenceCalculator(){ const [start,setStart]=useState("2026-01-01"),[end,setEnd]=useState("2026-12-31"); const days=Math.abs(dateDays(start,end)); return <CalculatorShell title="Date Difference Calculator" description="Find the elapsed time between two calendar dates in days, weeks and approximate months."><div className="form-grid"><Field label="Start date" type="date" value={start} onChange={setStart}/><Field label="End date" type="date" value={end} onChange={setEnd}/></div><Results><Result label="Difference" value={`${days} days`} large/><Result label="Weeks" value={(days/7).toFixed(2)}/><Result label="Approx. months" value={(days/30.4375).toFixed(2)}/></Results></CalculatorShell>; }
 export function DaysBetweenDatesCalculator(){ const [start,setStart]=useState("2026-01-01"),[end,setEnd]=useState("2026-12-31"); const days=Math.abs(dateDays(start,end))+1; return <CalculatorShell title="Days Between Dates Calculator" description="Count calendar days between two dates, including both endpoints for planning ranges."><div className="form-grid"><Field label="Start date" type="date" value={start} onChange={setStart}/><Field label="End date" type="date" value={end} onChange={setEnd}/></div><Results><Result label="Days including both dates" value={`${days} days`} large/><Result label="Weeks" value={(days/7).toFixed(2)}/></Results><div className="calc-note">This version counts both the start and end dates. For elapsed time, use Date Difference Calculator.</div></CalculatorShell>; }
 
