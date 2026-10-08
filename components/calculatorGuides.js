@@ -1074,5 +1074,33 @@ export const calculatorGuides = {
       { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Calculate percentages and percentage change." },
       { title: "Compound Interest Calculator", href: "/calculators/compound-interest-calculator", description: "Project growth with compounding." }
     ]
-  }
+  },
+  "basic-calculator": {
+    title: "Basic Calculator",
+    intro: "A basic calculator is useful for quick everyday arithmetic such as addition, subtraction, multiplication, division and percentages. This phone-style POSLATOR calculator runs directly in your browser.",
+    steps: [
+      "Tap the number buttons to enter a value.",
+      "Choose an operation such as +, −, × or ÷.",
+      "Use % for a percentage, ± to change the sign, or ⌫ to remove the last digit.",
+      "Press = to see the result. You can also use your keyboard for faster calculations."
+    ],
+    howItWorks: "The calculator builds a mathematical expression from your button presses and evaluates it locally in your browser. It does not send your calculation to a server.",
+    example: "For example, enter 125, tap ×, enter 8, and tap = to calculate 125 × 8 = 1,000.",
+    tips: [
+      "Use parentheses when you want to control the order of operations in a more complex expression.",
+      "Use the percentage button for quick percentage calculations such as 15% of a value.",
+      "Check the expression shown above the large result before using a number in an important decision.",
+      "For advanced functions such as powers and more scientific operations, use the Scientific Calculator."
+    ],
+    faqs: [
+      { question: "Is the basic calculator free?", answer: "Yes. It is free to use and does not require an account." },
+      { question: "Can I use my keyboard?", answer: "Yes. Number keys, arithmetic operators, Enter, Backspace, Escape and the percent key are supported." },
+      { question: "Does POSLATOR store my calculations on a server?", answer: "No. The calculation itself runs in your browser. Calculator history, when available, is saved locally on your device." }
+    ],
+    related: [
+      { title: "Scientific Calculator", href: "/calculators/scientific-calculator", description: "Advanced arithmetic and expressions." },
+      { title: "Percentage Calculator", href: "/calculators/percentage-calculator", description: "Solve percentage problems quickly." },
+      { title: "Fraction Calculator", href: "/calculators/fraction-calculator", description: "Calculate and simplify fractions." }
+    ]
+  },
 };
