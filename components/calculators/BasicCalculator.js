@@ -157,17 +157,6 @@ export function BasicCalculator() {
     setDisplay(tail ? formatNumber(Number(tail)) : next ? next.slice(-1) : "0");
   }
 
-  function toggleSign() {
-    setError(false);
-    const match = expression.match(/(?:^|[+\-*/^(])(-?(?:\d+(?:\.\d*)?|\.\d+))$/);
-    if (!match) return;
-    const number = match[1];
-    const replacement = number.startsWith("-") ? number.slice(1) : `-${number}`;
-    const next = `${expression.slice(0, expression.length - number.length)}${replacement}`;
-    setExpression(next);
-    setDisplay(replacement.startsWith("-") ? `−${formatNumber(Number(replacement.slice(1)))}` : formatNumber(Number(replacement)));
-  }
-
   function percent() {
     setError(false);
     const match = expression.match(/(?:\d+(?:\.\d*)?|\.\d+)$/);
@@ -205,6 +194,8 @@ export function BasicCalculator() {
     if (event.key >= "0" && event.key <= "9") append(event.key);
     else if (event.key === ".") append(".");
     else if (["+", "-", "*", "/", "^"].includes(event.key)) operator(event.key);
+    else if (event.key === "(") append("(");
+    else if (event.key === ")") append(")");
     else if (event.key === "%") percent();
     else if (event.key === "Enter" || event.key === "=") calculate();
     else if (event.key === "Backspace") backspace();
@@ -216,8 +207,8 @@ export function BasicCalculator() {
   const buttons = [
     { label: "AC", action: clear, type: "utility" },
     { label: "⌫", action: backspace, type: "utility", aria: "Backspace" },
-    { label: "±", action: toggleSign, type: "utility", aria: "Toggle sign" },
     { label: "%", action: percent, type: "utility", aria: "Percent" },
+    { label: "00", action: () => append("00"), type: "utility", aria: "Double zero" },
     { label: "7", action: () => append("7"), type: "number" },
     { label: "8", action: () => append("8"), type: "number" },
     { label: "9", action: () => append("9"), type: "number" },
@@ -241,7 +232,7 @@ export function BasicCalculator() {
       <div className="phone-calculator" onKeyDown={handleKeyDown} tabIndex={0} aria-label="Basic calculator">
         <div className="phone-display-wrap">
           <div className="phone-expression" aria-hidden="true">{expression || ""}</div>
-          <div className="phone-display result result-large" aria-live="polite">
+          <div className="phone-display result" aria-live="polite">
             <span>Result</span>
             <strong className={error ? "phone-error" : ""}>{display}</strong>
           </div>
