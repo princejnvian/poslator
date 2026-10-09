@@ -1,60 +1,22 @@
 import Link from "next/link";
 import ToolCard from "@/components/ToolCard";
 import ToolSearch from "@/components/ToolSearch";
+import calculatorTools from "@/components/calculatorTools";
 
-const tools = [
-  ["Basic Calculator", "A fast phone-style calculator for everyday arithmetic and percentages.", "/calculators/basic-calculator"],
-  ["Mortgage Calculator", "Estimate principal and interest monthly payment.", "/calculators/mortgage-calculator"],
-  ["Loan Calculator", "Estimate monthly payments and total loan interest.", "/calculators/loan-calculator"],
-  ["Compound Interest Calculator", "Project savings growth with compounding.", "/calculators/compound-interest-calculator"],
-  ["Paycheck Calculator", "Estimate take-home pay with simple inputs.", "/calculators/paycheck-calculator"],
-  ["Salary Calculator", "Convert hourly, weekly, monthly and annual pay.", "/calculators/salary-calculator"],
-  ["Investment Calculator", "Project potential investment growth over time.", "/calculators/investment-calculator"],
-  ["Car Loan Calculator", "Estimate a vehicle loan payment.", "/calculators/car-loan-calculator"],
-  ["BMI Calculator", "Calculate adult BMI from height and weight.", "/calculators/bmi-calculator"],
-  ["Take Home Pay Calculator", "Estimate net pay from gross pay and deductions.", "/calculators/take-home-pay-calculator"],
-  ["Amortization Calculator", "See payment, interest and payoff schedule.", "/calculators/amortization-calculator"],
-  ["Sales Tax Calculator", "Add or remove a user-supplied sales tax rate.", "/calculators/sales-tax-calculator"],
-  ["Time Card Calculator", "Track clock-in/out, breaks, weekly hours and pay.", "/calculators/time-card-calculator"],
-  ["Percentage Calculator", "Find percentages, changes, markup and margin.", "/calculators/percentage-calculator"],
-  ["Discount Calculator", "Calculate sale prices and savings instantly.", "/calculators/discount-calculator"],
-  ["Tip Calculator", "Calculate tip, total and split the bill.", "/calculators/tip-calculator"],
-  ["Age Calculator", "Calculate exact age between two dates.", "/calculators/age-calculator"],
-  ["Date Calculator", "Calculate days and weeks between two dates.", "/calculators/date-calculator"],
-  ["Unit Converter", "Convert common length, weight and temperature units.", "/calculators/unit-converter"],
-  ["Time Calculator", "Add or subtract hours and minutes.", "/calculators/time-calculator"],
-  ["Hours Worked Calculator", "Calculate total hours worked from start and end times.", "/calculators/hours-worked-calculator"],
-  ["Overtime Calculator", "Calculate overtime hours and overtime pay.", "/calculators/overtime-calculator"],
-  ["Car Affordability Calculator", "Estimate a car price based on income and budget.", "/calculators/car-affordability-calculator"],
-  ["Mortgage Payoff Calculator", "Estimate how extra payments can shorten your mortgage.", "/calculators/mortgage-payoff-calculator"],
-  ["Retirement Calculator", "Estimate retirement savings and future income.", "/calculators/retirement-calculator"],
-  ["Savings Calculator", "Estimate savings growth with regular contributions and interest.", "/calculators/savings-calculator"],
-  ["Debt Payoff Calculator", "Estimate how long it will take to pay off debt.", "/calculators/debt-payoff-calculator"],
-  ["401(k) Calculator", "Estimate 401(k) growth and retirement savings.", "/calculators/401k-calculator"],
-  ["Roth IRA Calculator", "Estimate Roth IRA growth and retirement contributions.", "/calculators/roth-ira-calculator"],
-  ["APY Calculator", "Calculate annual percentage yield from interest and compounding.", "/calculators/apy-calculator"],
-  ["APR Calculator", "Estimate annual percentage rate for borrowing costs.", "/calculators/apr-calculator"],
-  ["Interest Rate Calculator", "Find the interest rate from loan or investment values.", "/calculators/interest-rate-calculator"],
-  ["Debt-to-Income Ratio Calculator", "Calculate your debt-to-income ratio for borrowing decisions.", "/calculators/debt-to-income-ratio-calculator"],
-  ["Emergency Fund Calculator", "Estimate how much you should save for emergencies.", "/calculators/emergency-fund-calculator"],
-  ["Net Worth Calculator", "Calculate your net worth from assets and liabilities.", "/calculators/net-worth-calculator"],
-  ["Hourly to Salary Calculator", "Convert an hourly wage into annual, monthly and weekly salary.", "/calculators/hourly-to-salary-calculator"],
-  ["Salary to Hourly Calculator", "Convert annual salary into an equivalent hourly wage.", "/calculators/salary-to-hourly-calculator"],
-  ["Commission Calculator", "Calculate commission earnings from sales and commission rates.", "/calculators/commission-calculator"],
-  ["Bonus Calculator", "Estimate bonus amounts and total compensation.", "/calculators/bonus-calculator"],
-  ["PTO Calculator", "Estimate paid time off earned from work and accrual rates.", "/calculators/pto-calculator"],
-  ["Time Zone Converter", "Convert a time between different time zones.", "/calculators/time-zone-converter"],
-  ["Fraction Calculator", "Add, subtract, multiply and divide fractions.", "/calculators/fraction-calculator"],
-  ["Ratio Calculator", "Solve ratios and find equivalent proportions.", "/calculators/ratio-calculator"],
-  ["Average Calculator", "Calculate the average, mean and basic statistics of numbers.", "/calculators/average-calculator"],
-  ["Random Number Generator", "Generate random numbers within a range.", "/calculators/random-number-generator"],
-  ["GCF Calculator", "Find the greatest common factor of numbers.", "/calculators/gcf-calculator"],
-  ["LCM Calculator", "Find the least common multiple of numbers.", "/calculators/lcm-calculator"],
-  ["Scientific Calculator", "Perform common scientific and advanced math calculations.", "/calculators/scientific-calculator"],
-  ["Days Between Dates Calculator", "Find the exact number of days between two dates.", "/calculators/days-between-dates-calculator"],
-  ["GPA Calculator", "Calculate grade point average from courses and grades.", "/calculators/gpa-calculator"],
-  ["Grade Calculator", "Calculate grades, percentages and required scores.", "/calculators/grade-calculator"]
-];
+export const metadata = {
+  title: "Free Online Calculators for Money, Pay, Time & Math",
+  description: "Calculate car payments, take-home pay, mortgage costs, work hours, percentages and more with POSLATOR's free online calculators. No signup required.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Free Online Calculators for Money, Pay, Time & Math | POSLATOR",
+    description: "Free calculators for car loans, paychecks, mortgages, time tracking and everyday math, with clear explanations and instant results.",
+    url: "https://www.poslator.com/",
+    type: "website",
+  },
+};
+
+
+const tools = calculatorTools.map(([title, description, href]) => [title, description, href]);
 
 const popular = [
   tools.find(([title]) => title === "Basic Calculator"),

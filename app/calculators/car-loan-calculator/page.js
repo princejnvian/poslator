@@ -3,8 +3,8 @@ import CalculatorGuide from "@/components/CalculatorGuide";
 import { calculatorGuides } from "@/components/calculatorGuides";
 
 export const metadata = {
-  title: "Car Loan Calculator – Estimate Monthly Payment",
-  description: "Estimate your car loan payment using vehicle price, down payment, trade-in value, interest rate, and loan term.",
+  title: "Car Loan Calculator: Monthly Payment & Interest",
+  description: "Estimate car loan payments, amount financed and total interest. Compare 36-, 48-, 60-, 72- and 84-month terms with a free auto loan calculator.",
   alternates: { canonical: "/calculators/car-loan-calculator" },
 };
 

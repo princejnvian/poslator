@@ -41,25 +41,51 @@ export function CarLoanCalculator() {
   const [price, setPrice] = useState("30000");
   const [down, setDown] = useState("5000");
   const [trade, setTrade] = useState("0");
+  const [fees, setFees] = useState("0");
   const [rate, setRate] = useState("7");
   const [term, setTerm] = useState("60");
-  const principal = Math.max(0, (Number(price) || 0) - (Number(down) || 0) - (Number(trade) || 0));
-  const monthly = payment(principal, Number(rate) || 0, Number(term) || 0);
-  const total = monthly * (Number(term) || 0);
-  return <CalculatorShell title="Car Loan Calculator" description="Estimate a monthly car payment from vehicle price, down payment, trade-in value, interest rate and loan term.">
+  const vehiclePrice = Math.max(0, Number(price) || 0);
+  const downPayment = Math.max(0, Number(down) || 0);
+  const tradeValue = Math.max(0, Number(trade) || 0);
+  const financedFees = Math.max(0, Number(fees) || 0);
+  const annualRate = Math.min(100, Math.max(0, Number(rate) || 0));
+  const months = Math.min(120, Math.max(1, Math.round(Number(term) || 60)));
+  const principal = Math.max(0, vehiclePrice + financedFees - downPayment - tradeValue);
+  const monthly = payment(principal, annualRate, months);
+  const total = monthly * months;
+  const totalInterest = Math.max(0, total - principal);
+  const fmt = (n) => money(Number.isFinite(n) ? n : 0);
+  const comparisons = [36, 48, 60, 72, 84].map((monthsToCompare) => {
+    const pmt = payment(principal, annualRate, monthsToCompare);
+    return { months: monthsToCompare, payment: pmt, total: pmt * monthsToCompare, interest: Math.max(0, pmt * monthsToCompare - principal) };
+  });
+  return <CalculatorShell title="Car Loan Calculator" description="Estimate a car loan monthly payment, amount financed, total payments and total interest. Compare 36-, 48-, 60-, 72- and 84-month terms.">
     <div className="form-grid">
-      <Field label="Vehicle price" value={price} onChange={setPrice} suffix="$" />
-      <Field label="Down payment" value={down} onChange={setDown} suffix="$" />
-      <Field label="Trade-in value" value={trade} onChange={setTrade} suffix="$" />
-      <Field label="Interest rate" value={rate} onChange={setRate} suffix="%" />
-      <Field label="Loan term" value={term} onChange={setTerm} suffix="months" />
+      <Field label="Vehicle price" value={price} onChange={setPrice} min="0" suffix="$" />
+      <Field label="Down payment" value={down} onChange={setDown} min="0" suffix="$" />
+      <Field label="Trade-in value" value={trade} onChange={setTrade} min="0" suffix="$" />
+      <Field label="Taxes and fees financed" value={fees} onChange={setFees} min="0" suffix="$" />
+      <Field label="Annual interest rate (APR estimate)" value={rate} onChange={setRate} min="0" max="100" suffix="%" />
+      <Field label="Loan term" value={term} onChange={setTerm} min="1" max="120" suffix="months" />
     </div>
     <Results>
-      <Result label="Amount financed" value={money(principal)} />
-      <Result label="Estimated monthly payment" value={money(monthly)} large />
-      <Result label="Total interest" value={money(Math.max(0, total - principal))} />
+      <Result label="Amount financed" value={fmt(principal)} />
+      <Result label="Estimated monthly payment" value={fmt(monthly)} large />
+      <Result label="Total of payments" value={fmt(total)} />
+      <Result label="Total interest" value={fmt(totalInterest)} />
     </Results>
-    <div className="calc-note">Taxes, registration, dealer fees, add-ons and insurance are not included unless reflected in the vehicle price or financing amount.</div>
+    <div className="calc-note">Estimate assumes a fixed rate and equal monthly payments. Enter taxes and fees only if you plan to finance them. Insurance, fuel, maintenance and registration costs are separate.</div>
+    <section className="loan-term-comparison" aria-labelledby="loan-term-comparison-title">
+      <h3 id="loan-term-comparison-title">Compare car loan terms</h3>
+      <p>Keep the same amount financed and rate to see how the repayment period changes the monthly payment and total interest.</p>
+      <div className="loan-comparison-table-wrap">
+        <table className="loan-comparison-table">
+          <thead><tr><th scope="col">Term</th><th scope="col">Monthly payment</th><th scope="col">Total interest</th><th scope="col">Total paid</th></tr></thead>
+          <tbody>{comparisons.map((item) => <tr key={item.months} className={item.months === months ? "is-selected" : ""}><th scope="row">{item.months} months{item.months === months ? " (selected)" : ""}</th><td>{fmt(item.payment)}</td><td>{fmt(item.interest)}</td><td>{fmt(item.total)}</td></tr>)}</tbody>
+        </table>
+      </div>
+      <p className="loan-comparison-footnote">A longer term usually lowers the required monthly payment but increases the time spent paying interest. The comparison is illustrative and excludes fees not entered above.</p>
+    </section>
   </CalculatorShell>;
 }
 

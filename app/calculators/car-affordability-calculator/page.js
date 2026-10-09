@@ -5,7 +5,7 @@ import { calculatorGuides } from "@/components/calculatorGuides";
 export const metadata = {
   title: "Car Affordability Calculator – How Much Can I Afford?",
   description:
-    "Use POSLATOR's free car affordability calculator to estimate a practical car budget from income, debt, down payment, interest rate, and loan term.",
+    "Find how much car you can afford based on income, monthly debt, down payment, interest rate and loan term. Estimate a realistic car budget for your finances.",
   alternates: { canonical: "/calculators/car-affordability-calculator" },
 };
 

@@ -197,3 +197,19 @@ html[data-theme="dark"] .scientific-mode-row button{background:#252b33;border-co
 html[data-theme="comfort"] .scientific-calculator{background:#eef1ef;border-color:#d0d2cf}
 html[data-theme="comfort"] .scientific-key{background:#fafbf9;border-color:#d3d7d4;color:#26302d}
 @media(max-width:640px){.scientific-calculator{padding:12px;border-radius:20px}.scientific-display{min-height:128px;padding:15px 13px}.scientific-keypad{gap:7px}.scientific-key{height:48px;border-radius:12px;font-size:14px}.scientific-expression{font-size:17px}.scientific-result{font-size:35px}}
+
+
+/* Accessible, responsive loan-term comparison */
+.loan-term-comparison{margin-top:22px;padding:20px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,#fff,#f8fafc)}
+.loan-term-comparison h3{margin:0 0 6px;font-size:18px;letter-spacing:-.25px}
+.loan-term-comparison>p{margin:0 0 14px;color:var(--muted);font-size:13px}
+.loan-comparison-table-wrap{width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.loan-comparison-table{width:100%;border-collapse:collapse;font-size:13px;text-align:right}
+.loan-comparison-table th,.loan-comparison-table td{padding:11px 12px;border-bottom:1px solid #edf0f4;white-space:nowrap}
+.loan-comparison-table thead th{background:#f3f6fa;color:#475467;font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+.loan-comparison-table th:first-child,.loan-comparison-table td:first-child{text-align:left}
+.loan-comparison-table tbody tr:last-child th,.loan-comparison-table tbody tr:last-child td{border-bottom:0}
+.loan-comparison-table .is-selected{background:#edf5ff}
+.loan-comparison-table .is-selected th{color:var(--brand)}
+.loan-term-comparison .loan-comparison-footnote{margin:12px 0 0;font-size:12px}
+@media(max-width:640px){.loan-term-comparison{padding:14px;margin-top:16px}.loan-comparison-table th,.loan-comparison-table td{padding:10px 9px;font-size:12px}}

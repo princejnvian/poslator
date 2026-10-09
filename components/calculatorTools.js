@@ -1,4 +1,5 @@
 const tools = [
+  ["Basic Calculator", "A phone-style calculator for arithmetic, percentages and everyday calculations.", "/calculators/basic-calculator", "Everyday Math"],
   ["Time Card Calculator", "Track clock-in/out, breaks, weekly hours and pay.", "/calculators/time-card-calculator", "Work & Time"],
   ["Hours Worked Calculator", "Calculate hours and decimal hours between times.", "/calculators/hours-worked-calculator", "Work & Time"],
   ["Overtime Calculator", "Estimate regular, overtime and total gross pay.", "/calculators/overtime-calculator", "Work & Time"],
