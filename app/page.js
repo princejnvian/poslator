@@ -5,11 +5,11 @@ import calculatorTools from "@/components/calculatorTools";
 
 export const metadata = {
   title: "Free Online Calculators for Money, Pay, Time & Math",
-  description: "Calculate car payments, take-home pay, mortgage costs, work hours, percentages and more with POSLATOR's free online calculators. No signup required.",
+  description: "Use free online calculators, image resizers, YouTube creator tools, Instagram bio utilities and text tools. Fast, practical tools with no signup required.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "Free Online Calculators for Money, Pay, Time & Math | POSLATOR",
-    description: "Free calculators for car loans, paychecks, mortgages, time tracking and everyday math, with clear explanations and instant results.",
+    description: "Free calculators plus image, YouTube, Instagram and text tools. Clear results, useful utilities and no signup required.",
     url: "https://www.poslator.com/",
     type: "website",
   },
@@ -66,6 +66,19 @@ export default function Home() {
             <Link href="/calculators/compound-interest-calculator" className="category-card category-orange"><span className="category-icon">↗</span><div><b>Finance & Investing</b><small>Compounding and long-term projections</small></div><strong>02 tools →</strong></Link>
             <Link href="/calculators/percentage-calculator" className="category-card category-blue"><span className="category-icon">%</span><div><b>Everyday Math</b><small>Percentages, tips, discounts and tax</small></div><strong>04 tools →</strong></Link>
             <Link href="/calculators/age-calculator" className="category-card category-green"><span className="category-icon">◫</span><div><b>Dates & Health</b><small>Age, dates and BMI basics</small></div><strong>03 tools →</strong></Link>
+          </div>
+        </div>
+      </section>
+
+
+      <section className="section utility-home-section">
+        <div className="container">
+          <div className="section-heading"><div><div className="eyebrow">MORE THAN CALCULATORS</div><h2>Your everyday tools, all in one place</h2><p className="utility-home-intro">Resize images, prepare YouTube content and tidy up text with quick utilities that fit the POSLATOR experience.</p></div><Link href="/tools" className="text-link">Explore all tools <span>→</span></Link></div>
+          <div className="utility-home-grid">
+            <Link href="/tools/image-resizer" className="utility-home-card utility-home-image"><span className="utility-home-icon">▧</span><span className="utility-home-kicker">IMAGE STUDIO</span><strong>Resize. Compress. Convert.</strong><small>Useful image tools that work in your browser.</small><span className="utility-home-link">Explore image tools ↗</span><div className="home-image-stack"><i>JPG</i><i>PNG</i><i>WEBP</i></div></Link>
+            <Link href="/tools/youtube-tags-generator" className="utility-home-card utility-home-youtube"><span className="utility-home-icon utility-youtube-icon"><svg viewBox="0 0 48 34"><rect x="1" y="1" width="46" height="32" rx="9"/><path d="M20 10.5v13l11-6.5z"/></svg></span><span className="utility-home-kicker">CREATOR TOOLS</span><strong>Make your next upload easier.</strong><small>Tag, hashtag, title and description helpers.</small><span className="utility-home-link">Explore YouTube tools ↗</span><div className="home-tag-pills"><i>#tutorial</i><i>#howto</i><i>#creator</i></div></Link>
+            <Link href="/tools/instagram-engagement-calculator" className="utility-home-card utility-home-instagram"><span className="utility-home-icon utility-instagram-icon"><svg viewBox="0 0 48 48"><rect x="4" y="4" width="40" height="40" rx="12"/><circle cx="24" cy="24" r="9.5"/><circle cx="36" cy="12" r="2.5"/></svg></span><span className="utility-home-kicker">SOCIAL TOOLS</span><strong>Understand your profile.</strong><small>Estimate engagement and polish your bio.</small><span className="utility-home-link">Explore Instagram tools ↗</span><div className="home-social-stats"><b>4.8%<small>engagement</small></b><b>Bio<small>checklist</small></b></div></Link>
+            <Link href="/tools/word-counter" className="utility-home-card utility-home-text"><span className="utility-home-icon">Tt</span><span className="utility-home-kicker">TEXT UTILITIES</span><strong>Clean up words in seconds.</strong><small>Count, format, convert and organize text.</small><span className="utility-home-link">Explore text tools ↗</span><div className="home-text-lines"><i/><i/><i/></div></Link>
           </div>
         </div>
       </section>

@@ -11,7 +11,7 @@ export default function Header() {
           </Link>
           <nav className="main-nav">
             <Link href="/calculators">Calculators</Link>
-            <Link href="/calculators">All Tools</Link>
+            <Link href="/tools">All Tools</Link>
             <Link href="/about">About</Link>
           </nav>
           <ThemeControls />
@@ -25,6 +25,7 @@ export default function Header() {
           <Link href="/calculators/tip-calculator">Everyday Money</Link>
           <Link href="/calculators/amortization-calculator">Loans</Link>
           <Link href="/calculators/unit-converter">Converters</Link>
+          <Link href="/tools">Image & Creator Tools</Link>
           <span className="subnav-spacer" />
           <span className="privacy-pill">● Runs in your browser</span>
         </div>
