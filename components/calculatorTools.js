@@ -63,6 +63,11 @@ const tools = [
   ["Income Tax Calculator India", "Estimate AY 2026-27 tax under old or new regime.", "/calculators/income-tax-calculator-india", "India Salary & Tax"],
   ["PPF Calculator India", "Project PPF maturity value from contributions and rate.", "/calculators/ppf-calculator-india", "India Finance"],
   ["SIP Calculator India", "Project potential SIP value from monthly investments.", "/calculators/sip-calculator-india", "India Finance"],
+  ["Inflation Calculator", "Estimate how inflation changes future prices and the purchasing power of money.", "/calculators/inflation-calculator", "Finance & Investing"],
+  ["Rent vs. Buy Calculator", "Compare estimated renting costs with homeownership costs over your planned time horizon.", "/calculators/rent-vs-buy-calculator", "Loans & Cars"],
+  ["Fuel Cost Calculator", "Estimate road-trip fuel needs and cost from distance, vehicle efficiency and fuel price.", "/calculators/fuel-cost-calculator", "Everyday Planning"],
+  ["Credit Card Payoff Calculator", "Estimate credit card payoff time, total interest and total amount paid.", "/calculators/credit-card-payoff-calculator", "Finance & Investing"],
+  ["Body Fat Calculator", "Estimate body fat percentage with the US Navy circumference method.", "/calculators/body-fat-calculator", "Health & Fitness"],
 ];
 
 export default tools;
