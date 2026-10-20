@@ -1,4 +1,5 @@
 export const utilityTools = [
+  { slug: "resume-maker", title: "Professional CV & Resume Maker", category: "Career Tools", description: "Build a polished US resume or India CV with live preview and save it as a PDF.", icon: "resume", accent: "blue", kind: "resume-builder" },
   { slug: "image-resizer", title: "Image Resizer", category: "Image Tools", description: "Resize an image to exact pixel dimensions in your browser.", icon: "image", accent: "blue", kind: "resize" },
   { slug: "image-compressor", title: "Image Compressor", category: "Image Tools", description: "Reduce image file size with adjustable quality before downloading.", icon: "compress", accent: "violet", kind: "compress" },
   { slug: "jpg-to-png", title: "JPG to PNG Converter", category: "Image Tools", description: "Convert a JPG or JPEG image into a PNG file.", icon: "file-image", accent: "blue", kind: "convert-png" },

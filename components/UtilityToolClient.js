@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import ResumeBuilderClient from "@/components/ResumeBuilderClient";
 
 function formatBytes(bytes) {
   if (!Number.isFinite(bytes)) return "";
@@ -19,6 +20,7 @@ function makeCanvasImage(file, callback) {
 }
 
 export default function UtilityToolClient({ tool }) {
+  if (tool.kind === "resume-builder") return <ResumeBuilderClient tool={tool} />;
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState("");
   const [width, setWidth] = useState("1200");

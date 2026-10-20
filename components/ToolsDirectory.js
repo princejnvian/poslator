@@ -6,7 +6,7 @@ import { utilityTools } from "@/components/utilityTools";
 function BrandIcon({ tool }) {
   if (tool.icon === "youtube") return <span className="brand-logo brand-youtube"><svg viewBox="0 0 48 34" aria-hidden="true"><rect x="1" y="1" width="46" height="32" rx="9"/><path d="M20 10.5v13l11-6.5z"/></svg></span>;
   if (tool.icon === "instagram") return <span className="brand-logo brand-instagram"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="4" y="4" width="40" height="40" rx="12"/><circle cx="24" cy="24" r="9.5"/><circle cx="36" cy="12" r="2.5"/></svg></span>;
-  return <span className={`brand-logo brand-${tool.accent}`}>{tool.icon === "image" || tool.icon === "file-image" ? "▧" : tool.icon === "compress" ? "↔" : tool.icon === "crop" ? "⌗" : tool.icon === "text" ? "¶" : tool.icon === "type" ? "Tt" : tool.icon === "link" ? "↗" : "≡"}</span>;
+  return <span className={`brand-logo brand-${tool.accent}`}>{tool.icon === "image" || tool.icon === "file-image" ? "▧" : tool.icon === "compress" ? "↔" : tool.icon === "crop" ? "⌗" : tool.icon === "text" ? "¶" : tool.icon === "type" ? "Tt" : tool.icon === "link" ? "↗" : tool.icon === "resume" ? "CV" : "≡"}</span>;
 }
 export default function ToolsDirectory() {
   const [query,setQuery] = useState(""); const [category,setCategory] = useState("All tools");
